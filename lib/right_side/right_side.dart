@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class RightSide extends StatefulWidget {
-  RightSide({Key? key}) : super(key: key);
 
   @override
   State<RightSide> createState() => _RightSideState();
@@ -188,7 +187,10 @@ class _RightSideState extends State<RightSide> {
 
   Widget accountDetails() {
     return Container(
-      height: 600,
+      height: 500,
+      child: Center(
+        child: Text('Content',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
+      ),
     );
   }
 }
