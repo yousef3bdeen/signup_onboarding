@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Stack(
           children: [
             Image.asset('assets/images/left.png'),
-            Positioned(
+            const Positioned(
               left: 50,
               right: 50,
               top: 50,
