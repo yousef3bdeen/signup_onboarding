@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(
         const Duration(
-          seconds: 3,
+          seconds: 2,
         ), () {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Auth()));
     });
@@ -22,7 +22,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset('assets/images/left.png')),
+      body: Center(
+        child: Stack(
+          children: [
+            Image.asset('assets/images/left.png'),
+            Positioned(
+              left: 50,
+              right: 50,
+              top: 50,
+              bottom: 50,
+              child: CircularProgressIndicator(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
