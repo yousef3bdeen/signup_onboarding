@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signup_onboarding/presentation/splash/splash.dart';
 
 import 'presentation/auth/auth.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Auth(),
+      home: SplashScreen(),
     );
   }
 }
