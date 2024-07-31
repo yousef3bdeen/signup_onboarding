@@ -1,75 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:signup_onboarding/presentation/home/home.dart';
 
-class RightSide extends StatefulWidget {
+class personalInfo extends StatefulWidget {
+  const personalInfo({Key? key}) : super(key: key);
 
   @override
-  State<RightSide> createState() => _RightSideState();
+  State<personalInfo> createState() => _personalInfoState();
 }
 
-class _RightSideState extends State<RightSide> {
+class _personalInfoState extends State<personalInfo> {
   Color errorColor = Colors.red;
   String textFieldValue = '';
   bool onPress = false;
   bool changeAccount = false;
-
   TextEditingController myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 150),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Text(
-              'Sign up',
-              style: TextStyle(fontSize: 25),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      changeAccount = true;
-                    });
-                  },
-                  child: Text(
-                    'Personal Info',
-                    style: TextStyle(
-                        color: changeAccount == true
-                            ? Color.fromARGB(255, 13, 108, 187)
-                            : Colors.grey,
-                        fontWeight:
-                            changeAccount == true ? FontWeight.bold : null),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      changeAccount = false;
-                    });
-                  },
-                  child: Text(
-                    'Account Details',
-                    style: TextStyle(
-                        color: changeAccount == false
-                            ? Color.fromARGB(255, 13, 108, 187)
-                            : Colors.grey,
-                        fontWeight:
-                            changeAccount == false ? FontWeight.bold : null),
-                  ),
-                ),
-              ],
-            ),
-            changeAccount == true ? personalInfo() : accountDetails(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Column personalInfo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -174,7 +121,12 @@ class _RightSideState extends State<RightSide> {
           height: 35,
           width: double.infinity,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
             child: const Text(
               'SUBMIT',
               style: TextStyle(color: Colors.white),
@@ -182,15 +134,6 @@ class _RightSideState extends State<RightSide> {
           ),
         )
       ],
-    );
-  }
-
-  Widget accountDetails() {
-    return Container(
-      height: 500,
-      child: Center(
-        child: Text('Content',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
-      ),
     );
   }
 }

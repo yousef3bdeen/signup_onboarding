@@ -10,7 +10,7 @@ class LeftSide extends StatelessWidget {
       child: Column(
        crossAxisAlignment: CrossAxisAlignment.start,
         children:[
-          Text('minetech',style: TextStyle(color: Colors.white,fontSize: 22),),
+          const Text('minetech',style: TextStyle(color: Colors.white,fontSize: 22),),
           const Spacer(),
           Image.asset('assets/images/left.png'),
         const Spacer(),

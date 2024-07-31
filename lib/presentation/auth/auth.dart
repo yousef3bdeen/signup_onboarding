@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'left_side/left_side.dart';
 import 'right_side/right_side.dart';
 
-class MyScreen extends StatelessWidget {
-  const MyScreen({Key? key}) : super(key: key);
+class Auth extends StatelessWidget {
+  const Auth({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
